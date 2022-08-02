@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script defer src="app.js"></script>
-    <link href="app.css" rel="stylesheet"/>
-    <title>D&D Character Sheet</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script defer src="app.js" type="module"></script>
+        <link href="styles.css" rel="stylesheet"/>
+        <title>D&D Character Sheet</title>
+    </head>
 <body>
-    
+    <div id="head-container">
+        <button id="all-characters">Character List</button>
+        <form id="character-search">
+            <input type="text" name='search' placeholder="Search Characters By Name" required/>
+            <button type="submit" id="submit">Search</button>
+        </form>
+        <form id="delete-character">
+            <input type="text" name='delete' placeholder="Delete Character" required/>
+            <button type="submit" id="delete">Delete</button>
+        </form>
+        <button id="create-character">Create A New Character</button>
+    </div>
+    <div id="body-container">
+        <div id="left-container">left container - Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores corrupti nam veritatis debitis! Eligendi quas dicta eaque unde sint culpa. In sunt earum qui voluptas provident quam cumque. Quo, sint!</div>
+        <div id="center-container">center container - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt quam sapiente beatae voluptate maiores! Minima, facilis asperiores. Eveniet laboriosam explicabo excepturi, natus ad repudiandae modi asperiores tempora repellendus vel magni?</div>
+        <div id="right-container">right container - Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia autem repellat harum provident vero consequuntur eius, tempore libero odit doloremque ipsum minima nihil sed. Saepe repellat vero ex quod sunt.</div>
+    </div>
 </body>
 </html>
