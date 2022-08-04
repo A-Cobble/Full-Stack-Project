@@ -380,3 +380,6 @@ setInterval(function() {
      });
    });
 }, 15000);
+
+var myAudio = document.getElementById("audio");
+myAudio.volume = 0.2;
