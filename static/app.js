@@ -289,82 +289,7 @@ const createCharacter = () => {
     $(`<div><div>Slight Of Hand</div><input value="" class="number-inputs" id="characterInfoSlightOfHand" required></div>`).appendTo('#second-skills-set');
     $(`<div><div>Stealth</div><input value="" class="number-inputs" id="characterInfoStealth" required></div>`).appendTo('#second-skills-set');
     $(`<div><div>Survival</div><input value="" class="number-inputs" id="characterInfoSurvival" required></div>`).appendTo('#second-skills-set');
-    
     $(`<div id="save-changes-button"><button type="submit" id="save-changes">Save Changes</button><div>`).appendTo('.characterInfo')
-
-
-
-
-
-    // $('<form class="characterInfo" onSubmit="return false"></form>').appendTo('#center-container');
-    // $('<div id="char-heading"></div>').appendTo('.characterInfo');
-    // $(`<div><div>Character Name</div><input value="" id="characterInfoName" required></div>`).appendTo('#char-heading');
-    // $(`<div><div>Player Name</div><input value="" id="characterInfoPlayer" required></div>`).appendTo('#char-heading');
-    // $(`<div><div>Level</div><input value="" id="characterInfolevel" required></div>`).appendTo('#char-heading');
-    // $(`<div><div>Background</div><input value="" id="background" required></div>`).appendTo('#char-heading');
-    // $(`<div><div>Class</div><input value="" id="characterInfoClass" required></div>`).appendTo('#char-heading');
-    // $(`<div><div>Race</div><input value="" id="characterInfoRace" required></div>`).appendTo('#char-heading');
-    // $(`<div><div>Alignment</div><input value="" id="characterInfoAlignment" required></div>`).appendTo('#char-heading');
-    
-    // $('<div><div id="char-health-armor-etc"></div>').appendTo('.characterInfo');
-    // $(`<div><div>ArmorClass</div><input value="" id="characterInfoArmorClass" required></div>`).appendTo('#char-health-armor-etc');
-    // $(`<div><div>Initiative</div><input value="" id="characterInfoInitiative" required></div>`).appendTo('#char-health-armor-etc');
-    // $(`<div><div>Speed</div><input value="" id="characterInfoSpeed" required></div>`).appendTo('#char-health-armor-etc');
-    // $(`<div><div>Current Hit Points</div><input value="" id="characterInfoCurrentHitPoint" required></div>`).appendTo('#char-health-armor-etc');
-    // $(`<div><div>Total Hit Points</div><input value="" id="characterInfoTotalHitPoint" required></div>`).appendTo('#char-health-armor-etc');
-
-    // $('<div id="char-attributes"></div>').appendTo('.characterInfo');
-    // $(`<div><div>Strength</div><input value="" id="characterInfoStrength" required></div>`).appendTo('#char-attributes');
-    // $(`<div><div>Dexterity</div><input value="" id="characterInfoDexterity" required></div>`).appendTo('#char-attributes');
-    // $(`<div><div>Constitution</div><input value="" id="characterInfoConstitution" required></div>`).appendTo('#char-attributes');
-    // $(`<div><div>Intelligence</div><input value="" id="characterInfoIntelligence" required></div>`).appendTo('#char-attributes');
-    // $(`<div><div>Wisdom</div><input value="" id="characterInfoWisdom" required></div>`).appendTo('#char-attributes');
-    // $(`<div><div>Charisma</div><input value="" id="characterInfoCharisma" required></div>`).appendTo('#char-attributes');
-    
-    // $('<div id="char-extras"></div>').appendTo('.characterInfo');
-    // $(`<div><div>Experience Points</div><input value="" id="characterInfoExp" required></div>`).appendTo('#char-extras');
-    // $(`<div><div>Passive Wisdom</div><input value="" id="characterInfoPassiveWisdom" required></div>`).appendTo('#char-extras');
-    // $(`<div><div>Inspiration</div><input value="" id="characterInfoInspiration" required></div>`).appendTo('#char-extras');
-    // $(`<div><div>Proficiency</div><input value="" id="characterInfoProficiency" required></div>`).appendTo('#char-extras');
-    
-    // $('<div id="char-saving-throws"></div>').appendTo('.characterInfo');
-    // $(`<div><div>Saving Throw Strength</div><input value="" id="characterInfoSTStr" required></div>`).appendTo('#char-saving-throws');
-    // $(`<div><div>Saving Throw Dexterity</div><input value="" id="characterInfoSTDex" required></div>`).appendTo('#char-saving-throws');
-    // $(`<div><div>Saving Throw Constitution</div><input value="" id="characterInfoSTCon" required></div>`).appendTo('#char-saving-throws');
-    // $(`<div><div>Saving Throw Intelligence</div><input value="" id="characterInfoSTInt" required></div>`).appendTo('#char-saving-throws');
-    // $(`<div><div>Saving Throw Wisdom</div><input value="" id="characterInfoSTWis" required></div>`).appendTo('#char-saving-throws');
-    // $(`<div><div>Saving Throw Charisma</div><input value="" id="characterInfoSTCha" required></div>`).appendTo('#char-saving-throws');
-    
-    // $('<div id="char-skills"></div>').appendTo('.characterInfo');
-    // $(`<div><div>Acrobatics</div><input value="" id="characterInfoAcrobatics" required></div>`).appendTo('#char-skills');
-    // $(`<div><div>Animal Handling</div><input value="" id="characterInfoAnimal" required></div>`).appendTo('#char-skills');
-    // $(`<div><div>Arcana</div><input value="" id="characterInfoArcana" required></div>`).appendTo('#char-skills');
-    // $(`<div><div>Athletics</div><input value="" id="characterInfoAthletics" required></div>`).appendTo('#char-skills');
-    // $(`<div><div>Deception</div><input value="" id="characterInfoDeception" required></div>`).appendTo('#char-skills');
-    // $(`<div><div>History</div><input value="" id="characterInfoHistory" required></div>`).appendTo('#char-skills');
-    // $(`<div><div>Insight</div><input value="" id="characterInfoInsight" required></div>`).appendTo('#char-skills');
-    // $(`<div><div>Intimidation</div><input value="" id="characterInfoIntimidation" required></div>`).appendTo('#char-skills');
-    // $(`<div><div>Investigation</div><input value="" id="characterInfoInvestigation" required></div>`).appendTo('#char-skills');
-    // $(`<div><div>Medicine</div><input value="" id="characterInfoMedicine" required></div>`).appendTo('#char-skills');
-    // $(`<div><div>Nature</div><input value="" id="characterInfoNature" required></div>`).appendTo('#char-skills');
-    // $(`<div><div>Perception</div><input value="" id="characterInfoPerception" required></div>`).appendTo('#char-skills');
-    // $(`<div><div>Performance</div><input value="" id="characterInfoPerformance" required></div>`).appendTo('#char-skills');
-    // $(`<div><div>Persuasion</div><input value="" id="characterInfoPersuasion" required></div>`).appendTo('#char-skills');
-    // $(`<div><div>Religion</div><input value="" id="characterInfoReligion" required></div>`).appendTo('#char-skills');
-    // $(`<div><div>Slight Of Hand</div><input value="" id="characterInfoSlightOfHand" required></div>`).appendTo('#char-skills');
-    // $(`<div><div>Stealth</div><input value="" id="characterInfoStealth" required></div>`).appendTo('#char-skills');
-    // $(`<div><div>Survival</div><input value="" id="characterInfoSurvival" required></div>`).appendTo('#char-skills');
-    
-    // $('<div id="char-text-areas"></div>').appendTo('.characterInfo');
-    // $(`<div><div>Other Proficiencies & Languages</div><textarea id="characterInfoLanguages"> </textarea></div>`).appendTo('#char-text-areas');
-    // $(`<div><div>Attacks & Spellcasting</div><textarea id="characterInfoAttacksSpellcaster"> </textarea></div>`).appendTo('#char-text-areas');
-    // $(`<div><div>Equipment</div><textarea id="characterInfoEquipment"> </textarea></div>`).appendTo('#char-text-areas');
-    // $(`<div><div>Personality Traits</div><textarea id="characterInfoPersonality"> </textarea></div>`).appendTo('#char-text-areas');
-    // $(`<div><div>Ideals</div><textarea id="characterInfoIdeals"> </textarea></div>`).appendTo('#char-text-areas');
-    // $(`<div><div>Bonds</div><textarea id="characterInfoBonds"> </textarea></div>`).appendTo('#char-text-areas');
-    // $(`<div><div>Flaws</div><textarea id="characterInfoFlaws"> </textarea></div>`).appendTo('#char-text-areas');
-    // $(`<div><div>Features & Traits</div><textarea id="characterInfoFeaturesTraits"> </textarea></div>`).appendTo('#char-text-areas');
-    // $(`<button type="submit" id="save-changes">Save Changes</button>`).appendTo('#char-text-areas');
 
     $('.characterInfo').submit((event) => {
         event.preventDefault()
@@ -444,7 +369,6 @@ const createCharacter = () => {
     });
 }
 
-
 var images = ['/images/Dragon-HD.jpeg', '/images/Dragon-statues.jpeg', '/images/Dungeon.jpeg', '/images/forgotten.jpeg', '/images/Knight.jpeg', '/images/Ranger.jpeg'];
 var $bodyContainer = $('#body-container');
 let index = 1;
@@ -456,20 +380,3 @@ setInterval(function() {
      });
    });
 }, 15000);
-
-
-var myAudio= document.getElementById("myAudio");
-
-myAudio = new Audio('/music/background_music.mp3'); 
-if (typeof myAudio.loop == 'boolean')
-{
-    myAudio.loop = true;
-}
-else
-{
-    myAudio.addEventListener('ended', function() {
-        this.currentTime = 0;
-        this.play();
-    }, false);
-}
-myAudio.play();
