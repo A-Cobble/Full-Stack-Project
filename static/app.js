@@ -54,73 +54,81 @@ const characterInfo = (information) => {
     currentName[0] =information.character_name
     $('<form class="characterInfo" onSubmit="return false"></form>').appendTo('#center-container');
     $('<div id="char-heading"></div>').appendTo('.characterInfo');
+    $(`<div><div>Level</div><input value="${information.level}" class="number-inputs" id="characterInfolevel" required></div>`).appendTo('#char-heading');
     $(`<div><div>Character Name</div><input value="${information.character_name}" id="characterInfoName" required></div>`).appendTo('#char-heading');
     $(`<div><div>Player Name</div><input value="${information.player_name}" id="characterInfoPlayer" required></div>`).appendTo('#char-heading');
-    $(`<div><div>Level</div><input value="${information.level}" id="characterInfolevel" required></div>`).appendTo('#char-heading');
     $(`<div><div>Background</div><input value="${information.background}" id="background" required></div>`).appendTo('#char-heading');
     $(`<div><div>Class</div><input value="${information.character_class}" id="characterInfoClass" required></div>`).appendTo('#char-heading');
     $(`<div><div>Race</div><input value="${information.race}" id="characterInfoRace" required></div>`).appendTo('#char-heading');
     $(`<div><div>Alignment</div><input value="${information.alignment}" id="characterInfoAlignment" required></div>`).appendTo('#char-heading');
 
-    $('<div id="char-attributes"></div>').appendTo('.characterInfo');
-    $(`<div><div>Strength</div><input value="${information.strength}" id="characterInfoStrength" required></div>`).appendTo('#char-attributes');
-    $(`<div><div>Dexterity</div><input value="${information.dexterity}" id="characterInfoDexterity" required></div>`).appendTo('#char-attributes');
-    $(`<div><div>Constitution</div><input value="${information.constitution}" id="characterInfoConstitution" required></div>`).appendTo('#char-attributes');
-    $(`<div><div>Intelligence</div><input value="${information.intelligence}" id="characterInfoIntelligence" required></div>`).appendTo('#char-attributes');
-    $(`<div><div>Wisdom</div><input value="${information.wisdom}" id="characterInfoWisdom" required></div>`).appendTo('#char-attributes');
-    $(`<div><div>Charisma</div><input value="${information.charisma}" id="characterInfoCharisma" required></div>`).appendTo('#char-attributes');
-    
+    $('<div><div id="char-health-armor-etc"></div>').appendTo('.characterInfo');
+    $(`<div><div>ArmorClass</div><input value="${information.armor_class}" class="large-numbers" id="characterInfoArmorClass" required></div>`).appendTo('#char-health-armor-etc');
+    $(`<div><div>Initiative</div><input value="${information.initiative}" class="large-numbers" id="characterInfoInitiative" required></div>`).appendTo('#char-health-armor-etc');
+    $(`<div><div>Speed</div><input value="${information.speed}" class="large-numbers" id="characterInfoSpeed" required></div>`).appendTo('#char-health-armor-etc');
+    $(`<div><div>Current Hit Points</div><input value="${information.current_hit_points}" class="large-numbers" id="characterInfoCurrentHitPoint" required></div>`).appendTo('#char-health-armor-etc');
+    $(`<div><div>Total Hit Points</div><input value="${information.total_hit_points}" class="large-numbers" id="characterInfoTotalHitPoint" required></div>`).appendTo('#char-health-armor-etc');
+
     $('<div id="char-extras"></div>').appendTo('.characterInfo');
     $(`<div><div>Experience Points</div><input value="${information.experience_points}" id="characterInfoExp" required></div>`).appendTo('#char-extras');
-    $(`<div><div>Wisdom</div><input value="${information.passive_wisdom}" id="characterInfoPassiveWisdom" required></div>`).appendTo('#char-extras');
+    $(`<div><div>Passive Wisdom</div><input value="${information.passive_wisdom}" id="characterInfoPassiveWisdom" required></div>`).appendTo('#char-extras');
     $(`<div><div>Inspiration</div><input value="${information.inspiration}" id="characterInfoInspiration" required></div>`).appendTo('#char-extras');
     $(`<div><div>Proficiency</div><input value="${information.proficiency_bonus}" id="characterInfoProficiency" required></div>`).appendTo('#char-extras');
 
-    $('<div id="char-saving-throws"></div>').appendTo('.characterInfo');
-    $(`<div><div>Saving Throw Strength</div><input value="${information.saving_throw_strength}" id="characterInfoSTStr" required></div>`).appendTo('#char-saving-throws');
-    $(`<div><div>Saving Throw Dexterity</div><input value="${information.saving_throw_dexterity}" id="characterInfoSTDex" required></div>`).appendTo('#char-saving-throws');
-    $(`<div><div>Saving Throw Constitution</div><input value="${information.saving_throw_constitution}" id="characterInfoSTCon" required></div>`).appendTo('#char-saving-throws');
-    $(`<div><div>Saving Throw Intelligence</div><input value="${information.saving_throw_intelligence}" id="characterInfoSTInt" required></div>`).appendTo('#char-saving-throws');
-    $(`<div><div>Saving Throw Wisdom</div><input value="${information.saving_throw_wisdom}" id="characterInfoSTWis" required></div>`).appendTo('#char-saving-throws');
-    $(`<div><div>Saving Throw Charisma</div><input value="${information.saving_throw_charisma}" id="characterInfoSTCha" required></div>`).appendTo('#char-saving-throws');
+    $('<div id="attribute-ST-text-area"></div>').appendTo('.characterInfo');
+    $('<div id="attribute-ST-container"></div>').appendTo('#attribute-ST-text-area');
+    $('<div id="char-attributes"></div>').appendTo('#attribute-ST-container');
+    $(`<div><div>Strength</div><input value="${information.strength}" class="attribute-numbers" id="characterInfoStrength" required></div>`).appendTo('#char-attributes');
+    $(`<div><div>Dexterity</div><input value="${information.dexterity}" class="attribute-numbers" id="characterInfoDexterity" required></div>`).appendTo('#char-attributes');
+    $(`<div><div>Constitution</div><input value="${information.constitution}" class="attribute-numbers" id="characterInfoConstitution" required></div>`).appendTo('#char-attributes');
+    $(`<div><div>Intelligence</div><input value="${information.intelligence}" class="attribute-numbers" id="characterInfoIntelligence" required></div>`).appendTo('#char-attributes');
+    $(`<div><div>Wisdom</div><input value="${information.wisdom}" class="attribute-numbers" id="characterInfoWisdom" required></div>`).appendTo('#char-attributes');
+    $(`<div><div>Charisma</div><input value="${information.charisma}" class="attribute-numbers" id="characterInfoCharisma" required></div>`).appendTo('#char-attributes');
+    
 
-    $('<div id="char-skills"></div>').appendTo('.characterInfo');
-    $(`<div><div>Acrobatics</div><input value="${information.acrobatics}" id="characterInfoAcrobatics" required>`).appendTo('#char-skills');
-    $(`<div><div>Animal Handling</div><input value="${information.animal_handling}" id="characterInfoAnimal" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Arcana</div><input value="${information.arcana}" id="characterInfoArcana" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Athletics</div><input value="${information.athletics}" id="characterInfoAthletics" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Deception</div><input value="${information.deception}" id="characterInfoDeception" required></div>`).appendTo('#char-skills');
-    $(`<div><div>History</div><input value="${information.history}" id="characterInfoHistory" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Insight</div><input value="${information.insight}" id="characterInfoInsight" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Intimidation</div><input value="${information.intimidation}" id="characterInfoIntimidation" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Investigation</div><input value="${information.investigation}" id="characterInfoInvestigation" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Medicine</div><input value="${information.medicine}" id="characterInfoMedicine" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Nature</div><input value="${information.nature}" id="characterInfoNature" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Perception</div><input value="${information.perception}" id="characterInfoPerception" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Performance</div><input value="${information.performance}" id="characterInfoPerformance" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Persuasion</div><input value="${information.persuasion}" id="characterInfoPersuasion" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Religion</div><input value="${information.religion}" id="characterInfoReligion" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Slight Of Hand</div><input value="${information.slight_of_hand}" id="characterInfoSlightOfHand" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Stealth</div><input value="${information.stealth}" id="characterInfoStealth" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Survival</div><input value="${information.survival}" id="characterInfoSurvival" required></div>`).appendTo('#char-skills');
+    $('<div id="char-saving-throws"></div>').appendTo('#attribute-ST-container');
+    $(`<div><div>Saving Throw Strength</div><input value="${information.saving_throw_strength}" class="number-inputs" id="characterInfoSTStr" required></div>`).appendTo('#char-saving-throws');
+    $(`<div><div>Saving Throw Dexterity</div><input value="${information.saving_throw_dexterity}" class="number-inputs" id="characterInfoSTDex" required></div>`).appendTo('#char-saving-throws');
+    $(`<div><div>Saving Throw Constitution</div><input value="${information.saving_throw_constitution}" class="number-inputs" id="characterInfoSTCon" required></div>`).appendTo('#char-saving-throws');
+    $(`<div><div>Saving Throw Intelligence</div><input value="${information.saving_throw_intelligence}" class="number-inputs" id="characterInfoSTInt" required></div>`).appendTo('#char-saving-throws');
+    $(`<div><div>Saving Throw Wisdom</div><input value="${information.saving_throw_wisdom}" class="number-inputs" id="characterInfoSTWis" required></div>`).appendTo('#char-saving-throws');
+    $(`<div><div>Saving Throw Charisma</div><input value="${information.saving_throw_charisma}" class="number-inputs" id="characterInfoSTCha" required></div>`).appendTo('#char-saving-throws');
 
-    $('<div><div id="char-health-armor-etc"></div>').appendTo('.characterInfo');
-    $(`<div><div>ArmorClass</div><input value="${information.armor_class}" id="characterInfoArmorClass" required></div>`).appendTo('#char-health-armor-etc');
-    $(`<div><div>Initiative</div><input value="${information.initiative}" id="characterInfoInitiative" required></div>`).appendTo('#char-health-armor-etc');
-    $(`<div><div>Speed</div><input value="${information.speed}" id="characterInfoSpeed" required></div>`).appendTo('#char-health-armor-etc');
-    $(`<div><div>Current Hit Points</div><input value="${information.current_hit_points}" id="characterInfoCurrentHitPoint" required></div>`).appendTo('#char-health-armor-etc');
-    $(`<div><div>Total Hit Points</div><input value="${information.total_hit_points}" id="characterInfoTotalHitPoint" required></div>`).appendTo('#char-health-armor-etc');
-
-    $('<div id="char-text-areas"></div>').appendTo('.characterInfo');
-    $(`<div><div>Other Proficiencies & Languages</div><textarea id="characterInfoLanguages">${information.languages_proficiencies}</textarea></div>`).appendTo('#char-text-areas');
+    $('<div id="all-text-areas"></div>').appendTo('#attribute-ST-text-area');
+    $('<div id="char-text-areas"></div>').appendTo('#all-text-areas');
+    $(`<div><div>Other Proficiencies</div><textarea id="characterInfoLanguages">${information.languages_proficiencies}</textarea></div>`).appendTo('#char-text-areas');
     $(`<div><div>Attacks & Spellcasting</div><textarea id="characterInfoAttacksSpellcaster" required>${information.attacks_spellcasting}</textarea></div>`).appendTo('#char-text-areas');
     $(`<div><div>Equipment</div><textarea id="characterInfoEquipment" required>${information.equipment}</textarea></div>`).appendTo('#char-text-areas');
     $(`<div><div>Personality Traits</div><textarea id="characterInfoPersonality" required>${information.personality_traits}</textarea></div>`).appendTo('#char-text-areas');
-    $(`<div><div>Ideals</div><textarea id="characterInfoIdeals" required>${information.ideals}</textarea></div>`).appendTo('#char-text-areas');
-    $(`<div><div>Bonds</div><textarea id="characterInfoBonds" required>${information.bonds}</textarea></div>`).appendTo('#char-text-areas');
-    $(`<div><div>Flaws</div><textarea id="characterInfoFlaws" required>${information.flaws}</textarea></div>`).appendTo('#char-text-areas');
-    $(`<div><div>Features & Traits</div><textarea id="characterInfoFeaturesTraits" required>${information.features_traits}</textarea></div>`).appendTo('#char-text-areas');
-     $(`<button type="submit" id="save-changes">Save Changes</button>`).appendTo('.characterInfo')
+    $('<div id="second-text-area-set"></div>').appendTo('#all-text-areas');
+    $(`<div><div>Ideals</div><textarea id="characterInfoIdeals" required>${information.ideals}</textarea></div>`).appendTo('#second-text-area-set');
+    $(`<div><div>Bonds</div><textarea id="characterInfoBonds" required>${information.bonds}</textarea></div>`).appendTo('#second-text-area-set');
+    $(`<div><div>Flaws</div><textarea id="characterInfoFlaws" required>${information.flaws}</textarea></div>`).appendTo('#second-text-area-set');
+    $(`<div><div>Features & Traits</div><textarea id="characterInfoFeaturesTraits" required>${information.features_traits}</textarea></div>`).appendTo('#second-text-area-set');
+
+    $('<div id="all-skills"></div>').appendTo('.characterInfo');
+    $('<div id="char-skills"></div>').appendTo('#all-skills');
+    $(`<div><div>Acrobatics</div><input value="${information.acrobatics}" class="number-inputs" id="characterInfoAcrobatics" required>`).appendTo('#char-skills');
+    $(`<div><div>Animal Handling</div><input value="${information.animal_handling}" class="number-inputs" id="characterInfoAnimal" required></div>`).appendTo('#char-skills');
+    $(`<div><div>Arcana</div><input value="${information.arcana}" class="number-inputs" id="characterInfoArcana" required></div>`).appendTo('#char-skills');
+    $(`<div><div>Athletics</div><input value="${information.athletics}" class="number-inputs" id="characterInfoAthletics" required></div>`).appendTo('#char-skills');
+    $(`<div><div>Deception</div><input value="${information.deception}" class="number-inputs" id="characterInfoDeception" required></div>`).appendTo('#char-skills');
+    $(`<div><div>History</div><input value="${information.history}" class="number-inputs" id="characterInfoHistory" required></div>`).appendTo('#char-skills');
+    $(`<div><div>Insight</div><input value="${information.insight}" class="number-inputs" id="characterInfoInsight" required></div>`).appendTo('#char-skills');
+    $(`<div><div>Intimidation</div><input value="${information.intimidation}" class="number-inputs" id="characterInfoIntimidation" required></div>`).appendTo('#char-skills');
+    $(`<div><div>Investigation</div><input value="${information.investigation}" class="number-inputs" id="characterInfoInvestigation" required></div>`).appendTo('#char-skills');
+    $('<div id="second-skills-set"></div>').appendTo('#all-skills');
+    $(`<div><div>Medicine</div><input value="${information.medicine}" class="number-inputs" id="characterInfoMedicine" required></div>`).appendTo('#second-skills-set');
+    $(`<div><div>Nature</div><input value="${information.nature}" class="number-inputs" id="characterInfoNature" required></div>`).appendTo('#second-skills-set');
+    $(`<div><div>Perception</div><input value="${information.perception}" class="number-inputs" id="characterInfoPerception" required></div>`).appendTo('#second-skills-set');
+    $(`<div><div>Performance</div><input value="${information.performance}" class="number-inputs" id="characterInfoPerformance" required></div>`).appendTo('#second-skills-set');
+    $(`<div><div>Persuasion</div><input value="${information.persuasion}" class="number-inputs" id="characterInfoPersuasion" required></div>`).appendTo('#second-skills-set');
+    $(`<div><div>Religion</div><input value="${information.religion}" class="number-inputs" id="characterInfoReligion" required></div>`).appendTo('#second-skills-set');
+    $(`<div><div>Slight Of Hand</div><input value="${information.slight_of_hand}" class="number-inputs" id="characterInfoSlightOfHand" required></div>`).appendTo('#second-skills-set');
+    $(`<div><div>Stealth</div><input value="${information.stealth}" class="number-inputs" id="characterInfoStealth" required></div>`).appendTo('#second-skills-set');
+    $(`<div><div>Survival</div><input value="${information.survival}" class="number-inputs" id="characterInfoSurvival" required></div>`).appendTo('#second-skills-set');
+    
+    $(`<div id="save-changes-button"><button type="submit" id="save-changes">Save Changes</button><div>`).appendTo('.characterInfo')
 
     $('.characterInfo').submit((event) => {
         event.preventDefault()
@@ -205,75 +213,158 @@ $('#create-character').on('click', (event) => createCharacter() );
 
 const createCharacter = () => {
     $('#center-container').empty()
+
     $('<form class="characterInfo" onSubmit="return false"></form>').appendTo('#center-container');
     $('<div id="char-heading"></div>').appendTo('.characterInfo');
+    $(`<div><div>Level</div><input value="" class="number-inputs" id="characterInfolevel" required></div>`).appendTo('#char-heading');
     $(`<div><div>Character Name</div><input value="" id="characterInfoName" required></div>`).appendTo('#char-heading');
     $(`<div><div>Player Name</div><input value="" id="characterInfoPlayer" required></div>`).appendTo('#char-heading');
-    $(`<div><div>Level</div><input value="" id="characterInfolevel" required></div>`).appendTo('#char-heading');
     $(`<div><div>Background</div><input value="" id="background" required></div>`).appendTo('#char-heading');
     $(`<div><div>Class</div><input value="" id="characterInfoClass" required></div>`).appendTo('#char-heading');
     $(`<div><div>Race</div><input value="" id="characterInfoRace" required></div>`).appendTo('#char-heading');
     $(`<div><div>Alignment</div><input value="" id="characterInfoAlignment" required></div>`).appendTo('#char-heading');
-    
-    $('<div id="char-attributes"></div>').appendTo('.characterInfo');
-    $(`<div><div>Strength</div><input value="" id="characterInfoStrength" required></div>`).appendTo('#char-attributes');
-    $(`<div><div>Dexterity</div><input value="" id="characterInfoDexterity" required></div>`).appendTo('#char-attributes');
-    $(`<div><div>Constitution</div><input value="" id="characterInfoConstitution" required></div>`).appendTo('#char-attributes');
-    $(`<div><div>Intelligence</div><input value="" id="characterInfoIntelligence" required></div>`).appendTo('#char-attributes');
-    $(`<div><div>Wisdom</div><input value="" id="characterInfoWisdom" required></div>`).appendTo('#char-attributes');
-    $(`<div><div>Charisma</div><input value="" id="characterInfoCharisma" required></div>`).appendTo('#char-attributes');
-    $(`<div><div>Wisdom</div><input value="" id="characterInfoPassiveWisdom" required></div>`).appendTo('#char-attributes');
-    
+
+    $('<div><div id="char-health-armor-etc"></div>').appendTo('.characterInfo');
+    $(`<div><div>ArmorClass</div><input value="" class="large-numbers" id="characterInfoArmorClass" required></div>`).appendTo('#char-health-armor-etc');
+    $(`<div><div>Initiative</div><input value="" class="large-numbers" id="characterInfoInitiative" required></div>`).appendTo('#char-health-armor-etc');
+    $(`<div><div>Speed</div><input value="" class="large-numbers" id="characterInfoSpeed" required></div>`).appendTo('#char-health-armor-etc');
+    $(`<div><div>Current Hit Points</div><input value="" class="large-numbers" id="characterInfoCurrentHitPoint" required></div>`).appendTo('#char-health-armor-etc');
+    $(`<div><div>Total Hit Points</div><input value="" class="large-numbers" id="characterInfoTotalHitPoint" required></div>`).appendTo('#char-health-armor-etc');
+
     $('<div id="char-extras"></div>').appendTo('.characterInfo');
     $(`<div><div>Experience Points</div><input value="" id="characterInfoExp" required></div>`).appendTo('#char-extras');
+    $(`<div><div>Passive Wisdom</div><input value="" id="characterInfoPassiveWisdom" required></div>`).appendTo('#char-extras');
     $(`<div><div>Inspiration</div><input value="" id="characterInfoInspiration" required></div>`).appendTo('#char-extras');
     $(`<div><div>Proficiency</div><input value="" id="characterInfoProficiency" required></div>`).appendTo('#char-extras');
+
+    $('<div id="attribute-ST-text-area"></div>').appendTo('.characterInfo');
+    $('<div id="attribute-ST-container"></div>').appendTo('#attribute-ST-text-area');
+    $('<div id="char-attributes"></div>').appendTo('#attribute-ST-container');
+    $(`<div><div>Strength</div><input value="" class="attribute-numbers" id="characterInfoStrength" required></div>`).appendTo('#char-attributes');
+    $(`<div><div>Dexterity</div><input value="" class="attribute-numbers" id="characterInfoDexterity" required></div>`).appendTo('#char-attributes');
+    $(`<div><div>Constitution</div><input value="" class="attribute-numbers" id="characterInfoConstitution" required></div>`).appendTo('#char-attributes');
+    $(`<div><div>Intelligence</div><input value="" class="attribute-numbers" id="characterInfoIntelligence" required></div>`).appendTo('#char-attributes');
+    $(`<div><div>Wisdom</div><input value="" class="attribute-numbers" id="characterInfoWisdom" required></div>`).appendTo('#char-attributes');
+    $(`<div><div>Charisma</div><input value="" class="attribute-numbers" id="characterInfoCharisma" required></div>`).appendTo('#char-attributes');
     
-    $('<div id="char-saving-throws"></div>').appendTo('.characterInfo');
-    $(`<div><div>Saving Throw Strength</div><input value="" id="characterInfoSTStr" required></div>`).appendTo('#char-saving-throws');
-    $(`<div><div>Saving Throw Dexterity</div><input value="" id="characterInfoSTDex" required></div>`).appendTo('#char-saving-throws');
-    $(`<div><div>Saving Throw Constitution</div><input value="" id="characterInfoSTCon" required></div>`).appendTo('#char-saving-throws');
-    $(`<div><div>Saving Throw Intelligence</div><input value="" id="characterInfoSTInt" required></div>`).appendTo('#char-saving-throws');
-    $(`<div><div>Saving Throw Wisdom</div><input value="" id="characterInfoSTWis" required></div>`).appendTo('#char-saving-throws');
-    $(`<div><div>Saving Throw Charisma</div><input value="" id="characterInfoSTCha" required></div>`).appendTo('#char-saving-throws');
-    
-    $('<div id="char-skills"></div>').appendTo('.characterInfo');
-    $(`<div><div>Acrobatics</div><input value="" id="characterInfoAcrobatics" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Animal Handling</div><input value="" id="characterInfoAnimal" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Arcana</div><input value="" id="characterInfoArcana" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Athletics</div><input value="" id="characterInfoAthletics" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Deception</div><input value="" id="characterInfoDeception" required></div>`).appendTo('#char-skills');
-    $(`<div><div>History</div><input value="" id="characterInfoHistory" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Insight</div><input value="" id="characterInfoInsight" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Intimidation</div><input value="" id="characterInfoIntimidation" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Investigation</div><input value="" id="characterInfoInvestigation" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Medicine</div><input value="" id="characterInfoMedicine" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Nature</div><input value="" id="characterInfoNature" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Perception</div><input value="" id="characterInfoPerception" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Performance</div><input value="" id="characterInfoPerformance" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Persuasion</div><input value="" id="characterInfoPersuasion" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Religion</div><input value="" id="characterInfoReligion" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Slight Of Hand</div><input value="" id="characterInfoSlightOfHand" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Stealth</div><input value="" id="characterInfoStealth" required></div>`).appendTo('#char-skills');
-    $(`<div><div>Survival</div><input value="" id="characterInfoSurvival" required></div>`).appendTo('#char-skills');
-    
-    $('<div><div id="char-health-armor-etc"></div>').appendTo('.characterInfo');
-    $(`<div><div>ArmorClass</div><input value="" id="characterInfoArmorClass" required></div>`).appendTo('#char-health-armor-etc');
-    $(`<div><div>Initiative</div><input value="" id="characterInfoInitiative" required></div>`).appendTo('#char-health-armor-etc');
-    $(`<div><div>Speed</div><input value="" id="characterInfoSpeed" required></div>`).appendTo('#char-health-armor-etc');
-    $(`<div><div>Current Hit Points</div><input value="" id="characterInfoCurrentHitPoint" required></div>`).appendTo('#char-health-armor-etc');
-    $(`<div><div>Total Hit Points</div><input value="" id="characterInfoTotalHitPoint" required></div>`).appendTo('#char-health-armor-etc');
-    
-    $('<div id="char-text-areas"></div>').appendTo('.characterInfo');
-    $(`<div><div>Other Proficiencies & Languages</div><textarea id="characterInfoLanguages"> </textarea></div>`).appendTo('#char-text-areas');
+
+    $('<div id="char-saving-throws"></div>').appendTo('#attribute-ST-container');
+    $(`<div><div>Saving Throw Strength</div><input value="" class="number-inputs" id="characterInfoSTStr" required></div>`).appendTo('#char-saving-throws');
+    $(`<div><div>Saving Throw Dexterity</div><input value="" class="number-inputs" id="characterInfoSTDex" required></div>`).appendTo('#char-saving-throws');
+    $(`<div><div>Saving Throw Constitution</div><input value="" class="number-inputs" id="characterInfoSTCon" required></div>`).appendTo('#char-saving-throws');
+    $(`<div><div>Saving Throw Intelligence</div><input value="" class="number-inputs" id="characterInfoSTInt" required></div>`).appendTo('#char-saving-throws');
+    $(`<div><div>Saving Throw Wisdom</div><input value="" class="number-inputs" id="characterInfoSTWis" required></div>`).appendTo('#char-saving-throws');
+    $(`<div><div>Saving Throw Charisma</div><input value="" class="number-inputs" id="characterInfoSTCha" required></div>`).appendTo('#char-saving-throws');
+
+    $('<div id="all-text-areas"></div>').appendTo('#attribute-ST-text-area');
+    $('<div id="char-text-areas"></div>').appendTo('#all-text-areas');
+    $(`<div><div>Other Proficiencies</div><textarea id="characterInfoLanguages"> </textarea></div>`).appendTo('#char-text-areas');
     $(`<div><div>Attacks & Spellcasting</div><textarea id="characterInfoAttacksSpellcaster"> </textarea></div>`).appendTo('#char-text-areas');
     $(`<div><div>Equipment</div><textarea id="characterInfoEquipment"> </textarea></div>`).appendTo('#char-text-areas');
     $(`<div><div>Personality Traits</div><textarea id="characterInfoPersonality"> </textarea></div>`).appendTo('#char-text-areas');
-    $(`<div><div>Ideals</div><textarea id="characterInfoIdeals"> </textarea></div>`).appendTo('#char-text-areas');
-    $(`<div><div>Bonds</div><textarea id="characterInfoBonds"> </textarea></div>`).appendTo('#char-text-areas');
-    $(`<div><div>Flaws</div><textarea id="characterInfoFlaws"> </textarea></div>`).appendTo('#char-text-areas');
-    $(`<div><div>Features & Traits</div><textarea id="characterInfoFeaturesTraits"> </textarea></div>`).appendTo('#char-text-areas');
-    $(`<button type="submit" id="save-changes">Save Changes</button>`).appendTo('#char-text-areas')
+    $('<div id="second-text-area-set"></div>').appendTo('#all-text-areas');
+    $(`<div><div>Ideals</div><textarea id="characterInfoIdeals"> </textarea></div>`).appendTo('#second-text-area-set');
+    $(`<div><div>Bonds</div><textarea id="characterInfoBonds"> </textarea></div>`).appendTo('#second-text-area-set');
+    $(`<div><div>Flaws</div><textarea id="characterInfoFlaws"> </textarea></div>`).appendTo('#second-text-area-set');
+    $(`<div><div>Features & Traits</div><textarea id="characterInfoFeaturesTraits"></textarea></div>`).appendTo('#second-text-area-set');
+
+    $('<div id="all-skills"></div>').appendTo('.characterInfo');
+    $('<div id="char-skills"></div>').appendTo('#all-skills');
+    $(`<div><div>Acrobatics</div><input value="" class="number-inputs" id="characterInfoAcrobatics" required>`).appendTo('#char-skills');
+    $(`<div><div>Animal Handling</div><input value="" class="number-inputs" id="characterInfoAnimal" required></div>`).appendTo('#char-skills');
+    $(`<div><div>Arcana</div><input value="" class="number-inputs" id="characterInfoArcana" required></div>`).appendTo('#char-skills');
+    $(`<div><div>Athletics</div><input value="" class="number-inputs" id="characterInfoAthletics" required></div>`).appendTo('#char-skills');
+    $(`<div><div>Deception</div><input value="" class="number-inputs" id="characterInfoDeception" required></div>`).appendTo('#char-skills');
+    $(`<div><div>History</div><input value="" class="number-inputs" id="characterInfoHistory" required></div>`).appendTo('#char-skills');
+    $(`<div><div>Insight</div><input value="" class="number-inputs" id="characterInfoInsight" required></div>`).appendTo('#char-skills');
+    $(`<div><div>Intimidation</div><input value="" class="number-inputs" id="characterInfoIntimidation" required></div>`).appendTo('#char-skills');
+    $(`<div><div>Investigation</div><input value="" class="number-inputs" id="characterInfoInvestigation" required></div>`).appendTo('#char-skills');
+    $('<div id="second-skills-set"></div>').appendTo('#all-skills');
+    $(`<div><div>Medicine</div><input value="" class="number-inputs" id="characterInfoMedicine" required></div>`).appendTo('#second-skills-set');
+    $(`<div><div>Nature</div><input value="" class="number-inputs" id="characterInfoNature" required></div>`).appendTo('#second-skills-set');
+    $(`<div><div>Perception</div><input value="" class="number-inputs" id="characterInfoPerception" required></div>`).appendTo('#second-skills-set');
+    $(`<div><div>Performance</div><input value="" class="number-inputs" id="characterInfoPerformance" required></div>`).appendTo('#second-skills-set');
+    $(`<div><div>Persuasion</div><input value="" class="number-inputs" id="characterInfoPersuasion" required></div>`).appendTo('#second-skills-set');
+    $(`<div><div>Religion</div><input value="" class="number-inputs" id="characterInfoReligion" required></div>`).appendTo('#second-skills-set');
+    $(`<div><div>Slight Of Hand</div><input value="" class="number-inputs" id="characterInfoSlightOfHand" required></div>`).appendTo('#second-skills-set');
+    $(`<div><div>Stealth</div><input value="" class="number-inputs" id="characterInfoStealth" required></div>`).appendTo('#second-skills-set');
+    $(`<div><div>Survival</div><input value="" class="number-inputs" id="characterInfoSurvival" required></div>`).appendTo('#second-skills-set');
+    
+    $(`<div id="save-changes-button"><button type="submit" id="save-changes">Save Changes</button><div>`).appendTo('.characterInfo')
+
+
+
+
+
+    // $('<form class="characterInfo" onSubmit="return false"></form>').appendTo('#center-container');
+    // $('<div id="char-heading"></div>').appendTo('.characterInfo');
+    // $(`<div><div>Character Name</div><input value="" id="characterInfoName" required></div>`).appendTo('#char-heading');
+    // $(`<div><div>Player Name</div><input value="" id="characterInfoPlayer" required></div>`).appendTo('#char-heading');
+    // $(`<div><div>Level</div><input value="" id="characterInfolevel" required></div>`).appendTo('#char-heading');
+    // $(`<div><div>Background</div><input value="" id="background" required></div>`).appendTo('#char-heading');
+    // $(`<div><div>Class</div><input value="" id="characterInfoClass" required></div>`).appendTo('#char-heading');
+    // $(`<div><div>Race</div><input value="" id="characterInfoRace" required></div>`).appendTo('#char-heading');
+    // $(`<div><div>Alignment</div><input value="" id="characterInfoAlignment" required></div>`).appendTo('#char-heading');
+    
+    // $('<div><div id="char-health-armor-etc"></div>').appendTo('.characterInfo');
+    // $(`<div><div>ArmorClass</div><input value="" id="characterInfoArmorClass" required></div>`).appendTo('#char-health-armor-etc');
+    // $(`<div><div>Initiative</div><input value="" id="characterInfoInitiative" required></div>`).appendTo('#char-health-armor-etc');
+    // $(`<div><div>Speed</div><input value="" id="characterInfoSpeed" required></div>`).appendTo('#char-health-armor-etc');
+    // $(`<div><div>Current Hit Points</div><input value="" id="characterInfoCurrentHitPoint" required></div>`).appendTo('#char-health-armor-etc');
+    // $(`<div><div>Total Hit Points</div><input value="" id="characterInfoTotalHitPoint" required></div>`).appendTo('#char-health-armor-etc');
+
+    // $('<div id="char-attributes"></div>').appendTo('.characterInfo');
+    // $(`<div><div>Strength</div><input value="" id="characterInfoStrength" required></div>`).appendTo('#char-attributes');
+    // $(`<div><div>Dexterity</div><input value="" id="characterInfoDexterity" required></div>`).appendTo('#char-attributes');
+    // $(`<div><div>Constitution</div><input value="" id="characterInfoConstitution" required></div>`).appendTo('#char-attributes');
+    // $(`<div><div>Intelligence</div><input value="" id="characterInfoIntelligence" required></div>`).appendTo('#char-attributes');
+    // $(`<div><div>Wisdom</div><input value="" id="characterInfoWisdom" required></div>`).appendTo('#char-attributes');
+    // $(`<div><div>Charisma</div><input value="" id="characterInfoCharisma" required></div>`).appendTo('#char-attributes');
+    
+    // $('<div id="char-extras"></div>').appendTo('.characterInfo');
+    // $(`<div><div>Experience Points</div><input value="" id="characterInfoExp" required></div>`).appendTo('#char-extras');
+    // $(`<div><div>Passive Wisdom</div><input value="" id="characterInfoPassiveWisdom" required></div>`).appendTo('#char-extras');
+    // $(`<div><div>Inspiration</div><input value="" id="characterInfoInspiration" required></div>`).appendTo('#char-extras');
+    // $(`<div><div>Proficiency</div><input value="" id="characterInfoProficiency" required></div>`).appendTo('#char-extras');
+    
+    // $('<div id="char-saving-throws"></div>').appendTo('.characterInfo');
+    // $(`<div><div>Saving Throw Strength</div><input value="" id="characterInfoSTStr" required></div>`).appendTo('#char-saving-throws');
+    // $(`<div><div>Saving Throw Dexterity</div><input value="" id="characterInfoSTDex" required></div>`).appendTo('#char-saving-throws');
+    // $(`<div><div>Saving Throw Constitution</div><input value="" id="characterInfoSTCon" required></div>`).appendTo('#char-saving-throws');
+    // $(`<div><div>Saving Throw Intelligence</div><input value="" id="characterInfoSTInt" required></div>`).appendTo('#char-saving-throws');
+    // $(`<div><div>Saving Throw Wisdom</div><input value="" id="characterInfoSTWis" required></div>`).appendTo('#char-saving-throws');
+    // $(`<div><div>Saving Throw Charisma</div><input value="" id="characterInfoSTCha" required></div>`).appendTo('#char-saving-throws');
+    
+    // $('<div id="char-skills"></div>').appendTo('.characterInfo');
+    // $(`<div><div>Acrobatics</div><input value="" id="characterInfoAcrobatics" required></div>`).appendTo('#char-skills');
+    // $(`<div><div>Animal Handling</div><input value="" id="characterInfoAnimal" required></div>`).appendTo('#char-skills');
+    // $(`<div><div>Arcana</div><input value="" id="characterInfoArcana" required></div>`).appendTo('#char-skills');
+    // $(`<div><div>Athletics</div><input value="" id="characterInfoAthletics" required></div>`).appendTo('#char-skills');
+    // $(`<div><div>Deception</div><input value="" id="characterInfoDeception" required></div>`).appendTo('#char-skills');
+    // $(`<div><div>History</div><input value="" id="characterInfoHistory" required></div>`).appendTo('#char-skills');
+    // $(`<div><div>Insight</div><input value="" id="characterInfoInsight" required></div>`).appendTo('#char-skills');
+    // $(`<div><div>Intimidation</div><input value="" id="characterInfoIntimidation" required></div>`).appendTo('#char-skills');
+    // $(`<div><div>Investigation</div><input value="" id="characterInfoInvestigation" required></div>`).appendTo('#char-skills');
+    // $(`<div><div>Medicine</div><input value="" id="characterInfoMedicine" required></div>`).appendTo('#char-skills');
+    // $(`<div><div>Nature</div><input value="" id="characterInfoNature" required></div>`).appendTo('#char-skills');
+    // $(`<div><div>Perception</div><input value="" id="characterInfoPerception" required></div>`).appendTo('#char-skills');
+    // $(`<div><div>Performance</div><input value="" id="characterInfoPerformance" required></div>`).appendTo('#char-skills');
+    // $(`<div><div>Persuasion</div><input value="" id="characterInfoPersuasion" required></div>`).appendTo('#char-skills');
+    // $(`<div><div>Religion</div><input value="" id="characterInfoReligion" required></div>`).appendTo('#char-skills');
+    // $(`<div><div>Slight Of Hand</div><input value="" id="characterInfoSlightOfHand" required></div>`).appendTo('#char-skills');
+    // $(`<div><div>Stealth</div><input value="" id="characterInfoStealth" required></div>`).appendTo('#char-skills');
+    // $(`<div><div>Survival</div><input value="" id="characterInfoSurvival" required></div>`).appendTo('#char-skills');
+    
+    // $('<div id="char-text-areas"></div>').appendTo('.characterInfo');
+    // $(`<div><div>Other Proficiencies & Languages</div><textarea id="characterInfoLanguages"> </textarea></div>`).appendTo('#char-text-areas');
+    // $(`<div><div>Attacks & Spellcasting</div><textarea id="characterInfoAttacksSpellcaster"> </textarea></div>`).appendTo('#char-text-areas');
+    // $(`<div><div>Equipment</div><textarea id="characterInfoEquipment"> </textarea></div>`).appendTo('#char-text-areas');
+    // $(`<div><div>Personality Traits</div><textarea id="characterInfoPersonality"> </textarea></div>`).appendTo('#char-text-areas');
+    // $(`<div><div>Ideals</div><textarea id="characterInfoIdeals"> </textarea></div>`).appendTo('#char-text-areas');
+    // $(`<div><div>Bonds</div><textarea id="characterInfoBonds"> </textarea></div>`).appendTo('#char-text-areas');
+    // $(`<div><div>Flaws</div><textarea id="characterInfoFlaws"> </textarea></div>`).appendTo('#char-text-areas');
+    // $(`<div><div>Features & Traits</div><textarea id="characterInfoFeaturesTraits"> </textarea></div>`).appendTo('#char-text-areas');
+    // $(`<button type="submit" id="save-changes">Save Changes</button>`).appendTo('#char-text-areas');
 
     $('.characterInfo').submit((event) => {
         event.preventDefault()
@@ -359,9 +450,26 @@ var $bodyContainer = $('#body-container');
 let index = 1;
 setInterval(function() {
     $bodyContainer.animate({ opacity: 1 }, 500, function() {
-    $bodyContainer.css('background-image', 'url('+images[++index -1]+')');
+    $bodyContainer.css('background-image', 'url('+images[++index - 1]+')');
     $bodyContainer.animate({ opacity: 1 }, 500, function() {
        if(index === images.length) index = 0;
      });
    });
-}, 20000);
+}, 15000);
+
+
+var myAudio= document.getElementById("myAudio");
+
+myAudio = new Audio('/music/background_music.mp3'); 
+if (typeof myAudio.loop == 'boolean')
+{
+    myAudio.loop = true;
+}
+else
+{
+    myAudio.addEventListener('ended', function() {
+        this.currentTime = 0;
+        this.play();
+    }, false);
+}
+myAudio.play();
