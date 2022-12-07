@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-dndcharactersheet-dev-205657-authRole",
+      "UnauthRoleArn": "arn:aws:iam::915150927053:role/amplify-dndcharactersheet-dev-205657-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::915150927053:role/amplify-dndcharactersheet-dev-205657-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-dndcharactersheet-dev-205657-deployment",
+      "UnauthRoleName": "amplify-dndcharactersheet-dev-205657-unauthRole",
+      "StackName": "amplify-dndcharactersheet-dev-205657",
+      "StackId": "arn:aws:cloudformation:us-west-2:915150927053:stack/amplify-dndcharactersheet-dev-205657/946673a0-75eb-11ed-850f-027950cc0719",
+      "AmplifyAppId": "dgd9s86owm66k"
+    }
+  }
+}
